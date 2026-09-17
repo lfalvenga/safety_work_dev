@@ -23,7 +23,7 @@
   /* ------------------------------------------------------------- arranque */
   C.iniciar = function (el) {
     renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
     renderer.setSize(el.clientWidth, el.clientHeight);
     renderer.outputEncoding = THREE.sRGBEncoding;
     renderer.shadowMap.enabled = true;
@@ -40,7 +40,7 @@
     var sol = new THREE.DirectionalLight(0xfff4e6, 2.2);
     sol.position.set(41, 72, 56);
     sol.castShadow = true;
-    sol.shadow.mapSize.set(2048, 2048);
+    sol.shadow.mapSize.set(1024, 1024);
     var s = sol.shadow.camera;
     s.left = -70; s.right = 70; s.top = 70; s.bottom = -70; s.near = 1; s.far = 320;
     sol.shadow.bias = -0.0006;
